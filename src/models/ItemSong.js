@@ -3,12 +3,18 @@ import { StyleSheet, Text, View, Image, Dimensions, TouchableOpacity } from 'rea
 const { width, height } = Dimensions.get("window");
 import IconMaterial from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export function ItemSong({ item, onShowPopup, setItem, navigation}) {
+export function ItemSong({ data, item, index , onShowPopup, setItem, navigation}) {
+
 
     return (
         <View style={styles.item}>
             <TouchableOpacity style={{flex: 9,flexDirection: "row"}}
-            onPress={() => navigation.navigate("PlayMusic", {data : [item]})}>
+            onPress={() => {
+        //         console.log('data: ' + data)
+        // console.log('item: ' + item)
+        // console.log('index: ' + index)
+                navigation.navigate("PlayMusic", {data : data, index: index})
+                }}>
                 <Image
                     source={{ uri: item.artwork }}
                     style={{ width: width / 8, height: width / 8, borderRadius: 10, marginHorizontal: 10, }}

@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
-import { Text, View, StyleSheet, Platform, Image, TouchableOpacity, Alert } from 'react-native';
-import { IMAGES, PROFILE, DIMENSIONS} from '../constants' 
+import { Text, View, StyleSheet, Platform, Image, TouchableOpacity, Alert , Dimensions} from 'react-native';
+import { IMAGES, PROFILE} from '../constants' 
 import Icon from 'react-native-vector-icons/Fontisto';
 import IconMaterial from 'react-native-vector-icons/MaterialCommunityIcons';
+
+const { width, height } = Dimensions.get("window");
 
 export class HeaderMain extends Component {
   render() {
@@ -42,9 +44,8 @@ export class HeaderMain extends Component {
 const styles = StyleSheet.create({
   bgHeader: {
     flexDirection: 'row',
-    height: DIMENSIONS.WINDOWHEIGHT / 15,
+    height: height / 15,
     justifyContent: 'space-between',
-    // marginTop: 25,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -58,24 +59,24 @@ const styles = StyleSheet.create({
   left: {
     justifyContent: 'center',
     alignItems: 'center',
-    width: DIMENSIONS.WINDOWWIDTH / 3
+    width: width / 3
   },
   milaLogo:{
-    height: DIMENSIONS.WINDOWHEIGHT / 15 - 10,
-    width: DIMENSIONS.WINDOWWIDTH/3 -10
+    height: height / 15 - 10,
+    width: width/3 -10
   },
   center: {
     flex: 1,
   },
   right: {
     flexDirection: 'row',
-    width: DIMENSIONS.WINDOWWIDTH / 3,
+    width: width / 3,
     justifyContent: 'space-around',
     alignItems: 'center'
   },
   avatar:{
-    width: DIMENSIONS.WINDOWHEIGHT / 29,
-    height: DIMENSIONS.WINDOWHEIGHT / 29,
+    width: height / 29,
+    height: height / 29,
     borderRadius: 9999
   }
 });
