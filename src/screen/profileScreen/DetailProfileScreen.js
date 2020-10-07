@@ -2,19 +2,15 @@
 
 
 import React, { useState , useEffect} from 'react';
-
-
 import { Card, CardItem, Body } from 'native-base';
-import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native';
-
-
+import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
 import IconMaterial from 'react-native-vector-icons/MaterialCommunityIcons';
-
 
 import OptionsMenu from 'react-native-options-menu';
 import auth from '@react-native-firebase/auth';
 
 import { PROFILE, DIMENSIONS } from '../../constants';
+const { width, height } = Dimensions.get("window");
 function CustomCard({ number, str }) {
   return (
     <Card style={{ flex: 1 }}>
@@ -75,7 +71,7 @@ export function DetailProfileScreen({ navigation }) {
           flexDirection: 'row-reverse',
           paddingLeft: 10,
           paddingTop: 15,
-          width: DIMENSIONS.WINDOWWIDTH - 10,
+          width: width - 10,
         }}>
         <OptionsMenu
           customButton={
@@ -103,17 +99,16 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   imageBackground: {
-    height: (DIMENSIONS.WINDOWHEIGHT * 30) / 100,
-    width: DIMENSIONS.WINDOWWIDTH - 10,
+    height: (height * 30) / 100,
+    width: width - 10,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
   },
 
   avatarImage: {
-    marginTop:
-      (DIMENSIONS.WINDOWHEIGHT * 32) / 100 - DIMENSIONS.WINDOWWIDTH / 3,
-    width: DIMENSIONS.WINDOWWIDTH / 2.5,
-    height: DIMENSIONS.WINDOWWIDTH / 2.5,
+    marginTop: (height * 32) / 100 - width / 3,
+    width: width / 2.5,
+    height: width / 2.5,
     borderRadius: 999,
     borderWidth: 5,
     borderColor: '#EEEEEE',
@@ -121,9 +116,9 @@ const styles = StyleSheet.create({
   },
 
   content: {
-    width: DIMENSIONS.WINDOWWIDTH - 10,
-    height: (DIMENSIONS.WINDOWHEIGHT * 70) / 100,
-    marginTop: (DIMENSIONS.WINDOWHEIGHT * 25) / 100,
+    width: width - 10,
+    height: (height * 70) / 100,
+    marginTop: (height * 25) / 100,
     paddingTop: 110,
     position: 'absolute',
     borderTopLeftRadius: 15,

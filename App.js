@@ -10,6 +10,7 @@ import {SignInScreen, SignUpScreen, ResetPasswordScreen} from './src/screen/auth
 import { SplashScreen, UploadScreen, SearchScreen } from './src/screen/general'
 import { PlayMusic,MiniPlaying } from './src/screen/playing'
 import {Album, DetailAlbum} from './src/screen/album'
+import {DetailProfileScreen, ChannelDetail} from './src/screen/profileScreen'
 
 import { StyleSheet, Platform } from 'react-native';
 
@@ -36,6 +37,9 @@ export default function App(navigation) {
         <Stack.Screen name="PlayMusic" component={PlayMusic} />
         <Stack.Screen name="Album" component={Album} />
         <Stack.Screen name="DetailAlbum" component={DetailAlbum} />
+        <Stack.Screen name="DetailProfileScreen" component={DetailProfileScreen} />
+        <Stack.Screen name="ChannelDetail" component={ChannelDetail} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

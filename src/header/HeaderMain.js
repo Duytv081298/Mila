@@ -27,7 +27,7 @@ export class HeaderMain extends Component {
             <Icon name="search" color='#555555' size={20} />
           </TouchableOpacity>
           
-          <TouchableOpacity onPress={() => this.props.navigation.navigate("ProfileNavigator")}>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate("DetailProfileScreen")}>
             <Image
               style={styles.avatar}
               source={{ uri: PROFILE.AVATAR}}

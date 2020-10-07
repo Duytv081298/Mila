@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import { Text, View, StyleSheet, Platform, StatusBar} from 'react-native';
+
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import {HeaderMain} from '../../header'
 export class NotificationScreen extends Component {
          render() {
@@ -8,7 +10,11 @@ export class NotificationScreen extends Component {
                
                <StatusBar backgroundColor='#CCCCCC' barStyle="light-content" />
                <HeaderMain navigation={this.props.navigation} />
-               <Text style={styles.text}>This is Notification Screen</Text>
+               <View style= {{flex: 1,  alignItems: "center"}}>
+               <Ionicons name="notifications" size={170} color= "#BBBBBBBB" style = {{marginHorizontal: 5,  marginTop: 100, marginBottom: 50}}/>
+                 <Text style={{ fontSize: 22, fontWeight: "bold", marginVertical: 10}}>Your notifications live here.</Text>
+                 <Text style= {{textAlign: 'center', marginHorizontal: 30, fontSize: 15}}>Subscribe to your favorite channels to get notified about their latest songs.</Text>
+               </View>
              </View>
            );
          }
